@@ -823,18 +823,18 @@ section {
 }
 
 /* ============================================================
-   7. COUPONS SECTION — Modern Elastic Layout
-   ============================================================ */
+    7. COUPONS SECTION — Locked to Single Column Layout
+    ============================================================ */
 #coupons {
-  width: 100%;
-  max-width: 460px;
+  width: 100%; 
+  max-width: 520px; 
   margin: 0 auto;
 }
 
 .coupons-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px;
   width: 100%;
 }
 
@@ -842,31 +842,25 @@ section {
   position: relative;
   display: flex;
   align-items: stretch;
-  border-radius: var(--radius-sm);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: var(--transition);
+  box-shadow: var(--shadow);
+  transition: transform .25s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
-  min-height: 80px;
+  min-height: 85px;
+  box-sizing: border-box;
 }
-.coupon:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
+
 .coupon:active {
-  transform: translateY(0) scale(0.99);
+  transform: scale(0.98);
 }
 
 .coupon-icon {
-  width: 70px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background: linear-gradient(135deg, var(--rose-gold), var(--mauve));
   color: #fff;
   flex-shrink: 0;
@@ -874,63 +868,67 @@ section {
 
 .coupon-body {
   flex: 1;
-  padding: var(--space-sm) var(--space-md);
+  padding: 16px 20px;
   text-align: left;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
+  box-sizing: border-box;
 }
+
 .coupon-body .coupon-title {
   font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
+
 .coupon-body .coupon-sub {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--mauve);
-  margin-top: 2px;
-  font-weight: 500;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
 }
 
 .coupon::after {
   content: '';
   position: absolute;
-  left: 70px;
+  left: 80px;
   top: 0;
   bottom: 0;
   width: 0;
-  border-left: 2px dashed rgba(255, 255, 255, 0.4);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
   z-index: 2;
-}
-[data-theme="dark"] .coupon::after {
-  border-left: 2px dashed rgba(0, 0, 0, 0.2);
 }
 
 .coupon-stamp {
   position: absolute;
-  right: var(--space-sm);
+  right: 16px;
   top: 50%;
   transform: translateY(-50%) rotate(-12deg) scale(0);
   transform-origin: center right;
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--mauve);
   border: 2px solid var(--mauve);
-  border-radius: 4px;
-  padding: 2px 6px;
+  border-radius: 6px;
+  padding: 4px 8px;
   background: var(--blush);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   pointer-events: none;
   z-index: 3;
 }
+
 .coupon.redeemed .coupon-stamp {
   transform: translateY(-50%) rotate(-12deg) scale(1);
 }
-.coupon.redeemed .coupon-body {
-  opacity: 0.4;
-}
 
+.coupon.redeemed .coupon-body {
+  opacity: 0.45;
+}
 /* ============================================================
    8. FINAL VIEWPORT HERO
    ============================================================ */
