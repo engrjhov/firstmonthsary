@@ -783,18 +783,17 @@ section{
 }
 
 /* ============================================================
-   7. COUPONS SECTION — Locked to Single Column Layout
+   7. COUPONS SECTION — Flawless Stamp Overlay & Center Grid
    ============================================================ */
 #coupons {
   width: 100%; 
-  max-width: 520px; /* Keeps the cards from getting too wide on desktop desktops */
+  max-width: 480px;
   margin: 0 auto;
 }
 
-/* Forces the grid container to remain a stacked single column at all screen sizes */
 .coupons-grid {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
   width: 100%;
 }
@@ -821,13 +820,13 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+  font-size: 1.9rem;
+  background: linear-gradient(135deg, var(--rose-gold), var(--mauve));
   color: #fff;
   flex-shrink: 0;
+  line-height: 1;
 }
 
-/* Inner contents of the coupon remain beautifully stacked vertically */
 .coupon-body {
   flex: 1;
   padding: 16px 20px;
@@ -836,7 +835,7 @@ section{
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
 }
@@ -849,7 +848,7 @@ section{
 
 .coupon-body .coupon-sub {
   font-size: 0.78rem;
-  color: var(--forest-green);
+  color: var(--mauve);
   margin-top: 4px;
   letter-spacing: 0.04em;
 }
@@ -874,11 +873,11 @@ section{
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--deep-emerald);
-  border: 2px solid var(--deep-emerald);
+  color: var(--mauve);
+  border: 2px solid var(--mauve);
   border-radius: 6px;
   padding: 4px 8px;
-  background: var(--mint-light);
+  background: var(--cream);
   transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   pointer-events: none;
   z-index: 3;
@@ -891,6 +890,7 @@ section{
 .coupon.redeemed .coupon-body {
   opacity: 0.45;
 }
+
 /* ============================================================
    8. FINAL SECTION — Full Viewport Centering
    ============================================================ */
@@ -1281,10 +1281,10 @@ const CONFIG = {
   photo3: "",               
   photo4: "",               
   finalPhoto: "",            
-  voiceMessage: "https://www.youtube.com/watch?v=u9raS7-NisU&list=RDu9raS7-NisU&start_radio=1",
-  backgroundMusic: "https://drive.google.com/file/d/15yDf2UEqccDng9r3CeDWNDpPlUvAwJaT/view?usp=share_link",          
+  voiceMessage: "15yDf2UEqccDng9r3CeDWNDpPlUvAwJaT",
+  backgroundMusic: "https://www.youtube.com/watch?v=u9raS7-NisU&list=RDu9raS7-NisU&start_radio=1",          
   monthsaryLetter:
-`My Paulo,
+`My love,
 
 It's been a month — just one — but it already feels like you've made a quiet little home in my heart.
 
