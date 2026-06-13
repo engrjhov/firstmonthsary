@@ -445,225 +445,134 @@ section {
   50% { transform: translateY(8px); }
 }
 
-/* ============================================================
-   2. MEMORY LANE — Fluid Responsive Carousel
-   ============================================================ */
-/* ============================================================
-   SCALABLE GALLERY SYSTEM
-   ============================================================ */
 
-/* 1. Fluid Wrapper: Uses margin to provide side breathing room */
+/* ============================================================
+   2. MEMORY LANE — Fluid Responsive Carousel with Safety Margins
+   ============================================================ */
 #gallery-track-wrap {
-  width: 100%;
-  max-width: 600px; /* Limits size on large screens, but remains fluid */
-  margin: 0 auto;
-  padding: 0 var(--space-md); /* Ensures spacing on mobile edges */
+  width: 90vw;
+  max-width: 450px;
+  padding: 0;
+  margin: 0 auto; 
+  box-sizing: border-box;
 }
 
-/* 2. Track: Uses grid or flex with gap for perfect alignment */
 #gallery-track {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  scrollbar-width: none; 
   -webkit-overflow-scrolling: touch;
-  gap: var(--space-md); /* Creates consistent spacing between cards */
-  padding: var(--space-xs) 0; /* Prevents shadow clipping */
+  width: 100%;
 }
 
-/* 3. Cards: Flex-basis makes them fill the container */
+#gallery-track::-webkit-scrollbar {
+  display: none; 
+}
+
 .photo-card {
-  flex: 0 0 calc(100% - (var(--space-md) * 2)); /* Account for gap */
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 10px; 
   scroll-snap-align: center;
+  scroll-snap-stop: always; 
+  box-sizing: border-box;
 }
 
-/* 4. Responsive Image Container */
 .photo-card-inner {
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow);
   border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  height: 100%; /* Ensures uniform height */
+  box-sizing: border-box;
 }
 
 .photo-card-inner img {
   width: 100%;
-  aspect-ratio: 4 / 5; /* Keeps perfect proportions */
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
+  background: linear-gradient(135deg, var(--blush), var(--lavender));
 }
 
-/* 5. Navigation: Uses flex-center for auto-scaling */
+.photo-caption {
+  padding: 16px 18px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: left;
+}
+
+.photo-caption .cap-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.photo-caption .cap-date {
+  font-size: 0.78rem;
+  color: var(--mauve);
+  letter-spacing: 0.06em;
+}
+
 .gallery-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
-
-/* ============================================================
-   3. TIMELINE — Node Alignment Engine
-   ============================================================ */
-#timeline {
+  gap: 18px;
+  margin-top: 22px;
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
 }
 
-.timeline-list {
-  position: relative;
-  width: 100%;
-  padding-left: 36px;
-}
-.timeline-list::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--rose-gold), var(--lavender));
-  border-radius: 2px;
-}
-
-.timeline-item {
-  position: relative;
-  text-align: left;
-  padding-bottom: var(--space-lg);
-}
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -32px;
-  top: 2px;
-  width: 24px;
-  height: 24px;
+.gallery-arrow {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--cream);
-  border: 3px solid var(--rose-gold);
-  box-shadow: 0 0 0 4px rgba(248, 215, 218, 0.5);
-  transition: var(--transition);
-  z-index: 1;
-}
-.timeline-item.visible::before {
-  background: var(--rose-gold);
-  transform: scale(1.1);
-}
-
-.timeline-icon {
-  position: absolute;
-  left: -32px;
-  top: 2px;
-  width: 24px;
-  height: 24px;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  z-index: 2;
-}
-
-.timeline-item h3 {
+  line-height: 1; 
+  padding: 0;
+  margin: 0;
   font-size: 1.1rem;
-  margin-bottom: 6px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
   color: var(--mauve);
-  font-weight: 700;
-}
-.timeline-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text);
-  opacity: 0.9;
+  transition: transform .2s cubic-bezier(0.25, 1, 0.5, 1);
+  box-sizing: border-box;
 }
 
-/* ============================================================
-   4. LETTER SECTION 
-   ============================================================ */
-#letter {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
+.gallery-arrow:active {
+  transform: scale(0.9);
 }
 
-.letter-card {
-  width: 100%;
-  background:
-    repeating-linear-gradient(transparent, transparent 27px, rgba(138, 93, 107, 0.06) 28px),
-    linear-gradient(135deg, #FFFDF9, #FFF4EE);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-md) var(--space-md);
-  text-align: left;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  color: #4A3E49;
+.gallery-dots {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 8px;
+  height: 10px; 
 }
 
-[data-theme="dark"] .letter-card {
-  background:
-    repeating-linear-gradient(transparent, transparent 27px, rgba(255, 255, 255, 0.03) 28px),
-    linear-gradient(135deg, #2D232B, #22191E);
-  color: #F7EEF0;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.gallery-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(138, 93, 107, 0.25);
+  transition: all .3s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  display: block; 
 }
 
-.letter-card::before {
-  content: '❀';
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  font-size: 1.5rem;
-  color: var(--rose-gold);
-  opacity: 0.7;
-}
-
-.letter-greeting {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  margin-bottom: var(--space-sm);
-  color: var(--mauve);
-  font-style: italic;
-  font-weight: 600;
-}
-
-.letter-body-wrapper {
-  position: relative;
-  line-height: 28px;
-  font-size: 1rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.letter-ghost {
-  visibility: hidden;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-#letter-text {
-  position: absolute;
-  inset: 0;
-  white-space: pre-wrap;
-  word-break: break-word;
-  border-right: 2px solid var(--mauve);
-}
-#letter-text.done {
-  border-right: 2px solid transparent;
-}
-
-.letter-sign {
-  margin-top: var(--space-md);
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: var(--mauve);
-  text-align: right;
-  font-size: 1.1rem;
+.gallery-dots span.active {
+  background: var(--mauve);
+  width: 22px;
+  border-radius: 5px;
 }
 
 /* ============================================================
