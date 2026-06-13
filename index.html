@@ -1277,8 +1277,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- CONFIGURATION PARAMS ---
   const CONFIG = {
     letterText: "I can't believe it's already been a full month since we started our journey together. Looking back, every single day has been brighter just knowing you're in it. Thank you for your warmth, your incredible patience, and all the tiny inside jokes that make me smile when I look at my phone. You've made this month unforgettable, and I am so excited for all the chapters we have left to write together.",
-    typingSpeed: 35, // Milliseconds per character
-    audioUrl: ""     // Place your background music file path here (optional)
+    typingSpeed: 35, 
+    audioUrl: "music.mp3" // 🌟 CHANGED: Points directly to a local file named music.mp3
   };
 
   // --- DOM SELECTORS ---
@@ -1350,11 +1350,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         
-        // Custom Hook: Trigger typing effect exactly when letter card steps into view
         if (entry.target.id === "letter" && !letterAnimationTriggered) {
           triggerLetterTyping();
         }
-        // Custom Hook: Drop confetti when reaching the final card
         if (entry.target.id === "final") {
           triggerConfettiBurst();
         }
@@ -1372,7 +1370,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Smooth scroll helper for indicators
   indicatorDots.forEach(dot => {
     dot.addEventListener("click", () => {
       const targetId = dot.getAttribute("data-target");
@@ -1381,14 +1378,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("scroll", () => {
-    // Top linear reading line math
     const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
     if (totalScroll > 0) {
       const progressPercent = (window.scrollY / totalScroll) * 100;
       scrollProgress.style.width = `${progressPercent}%`;
     }
 
-    // Active navigational side-dot calculations
     let activeSectionId = "hero";
     sections.forEach(sec => {
       const top = sec.offsetTop - window.innerHeight / 3;
@@ -1415,7 +1410,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 4. FLOATING BACKGROUND HEARTS ---
   const heartsBg = document.getElementById("hearts-bg");
   function createFloatingHeart() {
-    if (document.hidden) return; // Save resource cycles if tab blurred
+    if (document.hidden) return; 
     const heart = document.createElement("div");
     heart.className = "floating-heart";
     heart.textContent = ["❤️", "💖", "💝", "🌸", "💕"][Math.floor(Math.random() * 5)];
@@ -1439,8 +1434,8 @@ document.addEventListener("DOMContentLoaded", () => {
       bgMusic.play().then(() => {
         isMusicPlaying = true;
         musicToggle.textContent = "🔊";
-      }).catch(() => {
-        // Safe protection against restrictive native browser safety loops
+      }).catch((err) => {
+        console.log("Autoplay context restriction caught:", err);
       });
     } else {
       bgMusic.pause();
@@ -1455,7 +1450,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalSlides = galleryTrack.children.length;
   let currentSlide = 0;
 
-  // Render navigation pagination indicators
   for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement("span");
     if (i === 0) dot.className = "active";
@@ -1468,7 +1462,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCarouselIndicators() {
     carouselDots.forEach((d, idx) => {
       if (idx === currentSlide) d.classList.add("active");
-      else d.classList.remove("active");
+      else d.className = "";
     });
   }
 
@@ -1485,7 +1479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   galleryNext.addEventListener("click", () => {
     if (currentSlide < totalSlides - 1) slideTo(currentSlide + 1);
-    else slideTo(0); // Infinite loop carousel option
+    else slideTo(0); 
   });
 
   galleryPrev.addEventListener("click", () => {
@@ -1493,14 +1487,12 @@ document.addEventListener("DOMContentLoaded", () => {
     else slideTo(totalSlides - 1);
   });
 
-  // Track user hardware layout modifications or shifts
   let resizeTimeout;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => slideTo(currentSlide), 150);
   });
 
-  // Keep pagination synchronized during touch swipe gestures
   galleryTrack.addEventListener("scroll", () => {
     const cardWidth = galleryTrack.querySelector(".photo-card").offsetWidth;
     if (cardWidth > 0) {
@@ -1535,7 +1527,6 @@ document.addEventListener("DOMContentLoaded", () => {
     awardDots[currentAwardIdx].classList.add("active");
   }
 
-  // Automate award card transitions quietly over time
   setInterval(() => {
     let nextIndex = currentAwardIdx + 1;
     if (nextIndex >= awardCards.length) nextIndex = 0;
@@ -1570,7 +1561,6 @@ document.addEventListener("DOMContentLoaded", () => {
       voiceWaveform.classList.add("playing");
       voicePlayBtn.textContent = "⏸";
       
-      // Simulate real-time audio playback track duration limit
       setTimeout(() => {
         voiceWaveform.classList.remove("playing");
         voicePlayBtn.textContent = "▶";
@@ -1597,7 +1587,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const confetti = document.createElement("div");
       confetti.className = "confetti-piece";
       
-      // Distributed physics positioning
       confetti.style.left = `${Math.random() * 100}vw`;
       confetti.style.width = `${Math.random() * 6 + 6}px`;
       confetti.style.height = `${Math.random() * 12 + 6}px`;
