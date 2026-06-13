@@ -782,18 +782,19 @@ section{
   margin-top: 8px;
 }
 
-/* ============================================================
-   7. COUPONS SECTION — Flawless Stamp Overlay & Center Grid
+* ============================================================
+   7. COUPONS SECTION — Locked to Single Column Layout
    ============================================================ */
 #coupons {
   width: 100%; 
-  max-width: 480px;
+  max-width: 520px; /* Keeps the cards from getting too wide on desktop desktops */
   margin: 0 auto;
 }
 
+/* Forces the grid container to remain a stacked single column at all screen sizes */
 .coupons-grid {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 18px;
   width: 100%;
 }
@@ -820,13 +821,13 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.9rem;
-  background: linear-gradient(135deg, var(--rose-gold), var(--mauve));
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
   color: #fff;
   flex-shrink: 0;
-  line-height: 1;
 }
 
+/* Inner contents of the coupon remain beautifully stacked vertically */
 .coupon-body {
   flex: 1;
   padding: 16px 20px;
@@ -835,7 +836,7 @@ section{
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
   box-sizing: border-box;
 }
@@ -848,7 +849,7 @@ section{
 
 .coupon-body .coupon-sub {
   font-size: 0.78rem;
-  color: var(--mauve);
+  color: var(--forest-green);
   margin-top: 4px;
   letter-spacing: 0.04em;
 }
@@ -873,11 +874,11 @@ section{
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--mauve);
-  border: 2px solid var(--mauve);
+  color: var(--deep-emerald);
+  border: 2px solid var(--deep-emerald);
   border-radius: 6px;
   padding: 4px 8px;
-  background: var(--cream);
+  background: var(--mint-light);
   transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   pointer-events: none;
   z-index: 3;
