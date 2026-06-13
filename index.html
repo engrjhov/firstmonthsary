@@ -448,12 +448,19 @@ section {
 /* ============================================================
    2. MEMORY LANE — Fluid Responsive Carousel
    ============================================================ */
+/* ============================================================
+   SCALABLE GALLERY SYSTEM
+   ============================================================ */
+
+/* 1. Fluid Wrapper: Uses margin to provide side breathing room */
 #gallery-track-wrap {
   width: 100%;
-  max-width: 460px;
+  max-width: 600px; /* Limits size on large screens, but remains fluid */
   margin: 0 auto;
+  padding: 0 var(--space-md); /* Ensures spacing on mobile edges */
 }
 
+/* 2. Track: Uses grid or flex with gap for perfect alignment */
 #gallery-track {
   display: flex;
   overflow-x: auto;
@@ -461,103 +468,40 @@ section {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
-}
-#gallery-track::-webkit-scrollbar {
-  display: none;
+  gap: var(--space-md); /* Creates consistent spacing between cards */
+  padding: var(--space-xs) 0; /* Prevents shadow clipping */
 }
 
+/* 3. Cards: Flex-basis makes them fill the container */
 .photo-card {
-  flex: 0 0 100%;
-  width: 100%;
-  padding: 0 8px;
+  flex: 0 0 calc(100% - (var(--space-md) * 2)); /* Account for gap */
   scroll-snap-align: center;
-  scroll-snap-stop: always;
 }
 
+/* 4. Responsive Image Container */
 .photo-card-inner {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--card-border);
   background: var(--card-bg);
+  height: 100%; /* Ensures uniform height */
 }
 
 .photo-card-inner img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5; /* Keeps perfect proportions */
   object-fit: cover;
   display: block;
-  background: linear-gradient(135deg, var(--blush), var(--lavender));
 }
 
-.photo-caption {
-  padding: var(--space-md);
-  text-align: left;
-}
-.photo-caption .cap-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  margin-bottom: 4px;
-}
-.photo-caption .cap-date {
-  font-size: 0.8rem;
-  color: var(--mauve);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
+/* 5. Navigation: Uses flex-center for auto-scaling */
 .gallery-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
-  margin-top: var(--space-md);
-  width: 100%;
-}
-
-.gallery-arrow {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-sm);
-  color: var(--mauve);
-  transition: var(--transition);
-}
-.gallery-arrow:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-.gallery-arrow:active {
-  transform: scale(0.92);
-}
-
-.gallery-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.gallery-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(138, 93, 107, 0.25);
-  transition: var(--transition);
-  cursor: pointer;
-}
-.gallery-dots span.active {
-  background: var(--mauve);
-  width: 20px;
-  border-radius: 4px;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
 }
 
 /* ============================================================
