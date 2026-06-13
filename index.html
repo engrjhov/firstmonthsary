@@ -11,8 +11,8 @@
 
 <style>
 /* ============================================================
-   ROOT VARIABLES — Color palette & theme tokens
-   ============================================================ */
+    ROOT VARIABLES — Color palette & theme tokens
+    ============================================================ */
 :root{
   --blush:#F8D7DA;
   --rose-gold:#D89CA4;
@@ -57,8 +57,8 @@ body{
 h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 
 /* ============================================================
-   ACCESSIBILITY — skip link & focus styles
-   ============================================================ */
+    ACCESSIBILITY — skip link & focus styles
+    ============================================================ */
 .skip-link{
   position:absolute;left:-999px;top:auto;
   background:var(--mauve);color:#fff;padding:8px 16px;border-radius:8px;z-index:9999;
@@ -72,8 +72,8 @@ h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 }
 
 /* ============================================================
-   LOADING SCREEN
-   ============================================================ */
+    LOADING SCREEN
+    ============================================================ */
 #loading-screen{
   position:fixed;inset:0;z-index:9999;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -108,8 +108,8 @@ h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 }
 
 /* ============================================================
-   FLOATING HEARTS BACKGROUND
-   ============================================================ */
+    FLOATING HEARTS BACKGROUND
+    ============================================================ */
 #hearts-bg{
   position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;contain:paint;
 }
@@ -127,8 +127,8 @@ h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 }
 
 /* ============================================================
-   TOP UI — progress bar, section indicator, dark mode toggle
-   ============================================================ */
+    TOP UI — progress bar, section indicator, dark mode toggle
+    ============================================================ */
 #scroll-progress{
   position:fixed;top:0;left:0;height:4px;width:0%;
   background:linear-gradient(90deg,var(--rose-gold),var(--mauve));
@@ -166,8 +166,8 @@ h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 #dark-toggle:active{transform:scale(0.9);}
 
 /* ============================================================
-   MUSIC CONTROL
-   ============================================================ */
+    MUSIC CONTROL
+    ============================================================ */
 #music-toggle{
   position:fixed;bottom:22px;left:16px;z-index:1000;
   width:48px;height:48px;border-radius:50%;
@@ -184,8 +184,8 @@ h1,h2,h3,.font-display{font-family:'Playfair Display',serif;}
 }
 
 /* ============================================================
-   SECTION BASE STYLES
-   ============================================================ */
+    SECTION BASE STYLES
+    ============================================================ */
 section{
   position:relative;
   min-height:100vh;
@@ -229,8 +229,8 @@ section{
 }
 
 /* ============================================================
-   1. HERO / COVER SECTION
-   ============================================================ */
+    1. HERO / COVER SECTION
+    ============================================================ */
 #hero{
   padding-top:50px;
   background:radial-gradient(circle at 50% 20%, rgba(248,215,218,0.9), transparent 60%);
@@ -290,8 +290,8 @@ section{
 }
 
 /* ============================================================
-   2. MEMORY LANE — Fluid Responsive Carousel with Safety Margins
-   ============================================================ */
+    2. MEMORY LANE — Fluid Responsive Carousel with Safety Margins
+    ============================================================ */
 #gallery-track-wrap {
   width: 90vw;
   max-width: 450px;
@@ -419,8 +419,8 @@ section{
 }
 
 /* ============================================================
-   3. TIMELINE — Perfect Node Centering & Alignment Fixes
-   ============================================================ */
+    3. TIMELINE — Perfect Node Centering & Alignment Fixes
+    ============================================================ */
 #timeline {
   width: 100%; 
   max-width: 560px;
@@ -508,8 +508,8 @@ section{
 }
 
 /* ============================================================
-   4. LETTER SECTION — Zero Layout Shift Optimization
-   ============================================================ */
+    4. LETTER SECTION — Zero Layout Shift Optimization
+    ============================================================ */
 #letter {
   width: 100%; 
   max-width: 560px;
@@ -591,8 +591,8 @@ section{
 }
 
 /* ============================================================
-   5. AWARDS SECTION — Centering & Fluid Layout Fixes
-   ============================================================ */
+    5. AWARDS SECTION — Centering & Fluid Layout Fixes
+    ============================================================ */
 #awards {
   width: 100%; 
   max-width: 480px;
@@ -677,15 +677,15 @@ section{
 }
 
 /* ============================================================
-   6. VOICE MESSAGE SECTION — Centering & Waveform Fixes
-   ============================================================ */
+    6. VOICE MESSAGE SECTION — Centering & Waveform Fixes
+    ============================================================ */
 #voice {
   width: 100%; 
   max-width: 420px;
   margin: 0 auto;
 }
 
-.voice-card glass-card {
+.voice-card {
   width: 100%;
   padding: 38px 26px;
   border-radius: var(--radius);
@@ -783,8 +783,8 @@ section{
 }
 
 /* ============================================================
-   7. COUPONS SECTION — Locked to Single Column Layout (FIXED COMMENT TAG HERE)
-   ============================================================ */
+    7. COUPONS SECTION — Locked to Single Column Layout
+    ============================================================ */
 #coupons {
   width: 100%; 
   max-width: 520px; 
@@ -891,8 +891,8 @@ section{
 }
 
 /* ============================================================
-   8. FINAL SECTION — Full Viewport Centering
-   ============================================================ */
+    8. FINAL SECTION — Full Viewport Centering
+    ============================================================ */
 #final {
   padding: 0;
   color: #fff;
@@ -993,8 +993,8 @@ section{
 }
 
 /* ============================================================
-   RESPONSIVE — Adaptive Overrides
-   ============================================================ */
+    RESPONSIVE — Adaptive Overrides
+    ============================================================ */
 @media (min-width:700px){
   section{padding:120px 40px;}
   .section-title{font-size:3.2rem;}
@@ -1198,56 +1198,53 @@ section{
 
 <section id="voice">
   <div class="reveal">
-    <h2 class="section-title"><span class="section-emoji">🎙️</span> A Message From My Heart</h2>
-    <p class="section-sub">Some Feelings Are Better Heard Than Read</p>
-
+    <h2 class="section-title"><span class="section-emoji">🎵</span> A Tiny Voice Note</h2>
+    <p class="section-sub">Just a reminder</p>
     <div class="voice-card glass-card">
-      <div class="waveform" id="waveform">
+      <button class="play-btn" id="voice-play-btn" aria-label="Play voice note">▶</button>
+      <div class="waveform" id="voice-waveform">
         <span></span><span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <button class="play-btn" id="voice-play" aria-label="Play voice message">▶</button>
-      <p class="voice-quote">"Some feelings are better heard than read."</p>
-      <audio id="voice-audio" preload="none" src=""></audio>
+      <p class="voice-quote">"Press play to hear how much you mean to me..."</p>
     </div>
   </div>
 </section>
 
 <section id="coupons">
   <div class="reveal">
-    <h2 class="section-title"><span class="section-emoji">🎟️</span> Future Coupons</h2>
-    <p class="section-sub">Redeem When We Finally Meet</p>
-
+    <h2 class="section-title"><span class="section-emoji">🎟️</span> Love Coupons</h2>
+    <p class="section-sub">Tap to redeem whenever you need them</p>
     <div class="coupons-grid">
-      <div class="coupon" data-coupon="hugs">
-        <div class="coupon-icon">❤️</div>
-        <div class="coupon-body">
-          <div class="coupon-title">Unlimited Hugs</div>
-          <div class="coupon-sub">No expiry date • Tap to redeem</div>
-        </div>
-        <div class="coupon-stamp">REDEEMED</div>
-      </div>
-      <div class="coupon" data-coupon="coffee">
+      <div class="coupon">
         <div class="coupon-icon">☕</div>
         <div class="coupon-body">
-          <div class="coupon-title">Coffee Date</div>
-          <div class="coupon-sub">Just us, our favorite drinks • Tap to redeem</div>
+          <div class="coupon-title">Free Coffee / Treat</div>
+          <div class="coupon-sub">Valid anytime you need a little pickup boost.</div>
         </div>
         <div class="coupon-stamp">REDEEMED</div>
       </div>
-      <div class="coupon" data-coupon="movie">
-        <div class="coupon-icon">🎬</div>
+      <div class="coupon">
+        <div class="coupon-icon">📞</div>
         <div class="coupon-body">
-          <div class="coupon-title">Movie Night</div>
-          <div class="coupon-sub">Snacks + cuddles included • Tap to redeem</div>
+          <div class="coupon-title">Midnight Vent Call</div>
+          <div class="coupon-sub">Guaranteed uninterrupted space to talk about anything.</div>
         </div>
         <div class="coupon-stamp">REDEEMED</div>
       </div>
-      <div class="coupon" data-coupon="day">
-        <div class="coupon-icon">🌅</div>
+      <div class="coupon">
+        <div class="coupon-icon">🍿</div>
         <div class="coupon-body">
-          <div class="coupon-title">One Whole Day Together</div>
-          <div class="coupon-sub">From sunrise to sunset • Tap to redeem</div>
+          <div class="coupon-title">Virtual Movie Date</div>
+          <div class="coupon-sub">You pick the movie, I bring the virtual snacks.</div>
+        </div>
+        <div class="coupon-stamp">REDEEMED</div>
+      </div>
+      <div class="coupon">
+        <div class="coupon-icon">🪄</div>
+        <div class="coupon-body">
+          <div class="coupon-title">Win An Argument</div>
+          <div class="coupon-sub">Skip any tiny debate automatically. Use wisely!</div>
         </div>
         <div class="coupon-stamp">REDEEMED</div>
       </div>
@@ -1257,356 +1254,364 @@ section{
 
 <section id="final">
   <div class="final-bg">
-    <img src="" id="final-photo" alt="Us together" onerror="this.style.display='none';">
+    <img src="" alt="End Background" onerror="this.style.opacity='0';">
   </div>
   <div class="final-content reveal">
-    <h2>Happy First Monthsary</h2>
-    <p>Thank you for making this first month special.</p>
-    <p>Distance may separate us physically, but you've never felt far from my heart.</p>
-    <p class="signature">I love you.</p>
-    <div class="final-heart" aria-hidden="true">❤️</div>
+    <h2>To Many More Months</h2>
+    <p>Thank you for this beautiful first month. For every conversation, every smile, and the warmth you bring into my life. I can't wait to discover what else the universe has in store for us.</p>
+    <div class="signature">With all my love,</div>
+    <span class="final-heart">❤️</span>
   </div>
 </section>
-  
-<p class="made-with-love">Made with love, just for you. 🤍</p>
+
+<span class="made-with-love">Made with ♡ for you</span>
 
 </main>
 
 <script>
-const CONFIG = {
-  coverPhoto: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/cover.jpg",          
-  photo1: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo1.jpg",               
-  photo2: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo2.jpg",               
-  photo3: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo3.jpg",               
-  photo4: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo4.jpg",               
-  finalPhoto: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/final.jpg",            
-  voiceMessage: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/voice.mp3",
-  backgroundMusic: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/music.mp3",          
-  monthsaryLetter:
-`My Paulo,
+/* ============================================================
+    INTERACTIVE CONFIGURATION & LOGIC
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
 
-It's been a month — just one — but it already feels like you've made a quiet little home in my heart.
+  // --- CONFIGURATION PARAMS ---
+  const CONFIG = {
+    letterText: "I can't believe it's already been a full month since we started our journey together. Looking back, every single day has been brighter just knowing you're in it. Thank you for your warmth, your incredible patience, and all the tiny inside jokes that make me smile when I look at my phone. You've made this month unforgettable, and I am so excited for all the chapters we have left to write together.",
+    typingSpeed: 35, // Milliseconds per character
+    audioUrl: ""     // Place your background music file path here (optional)
+  };
 
-Thank you for the laughter, the late-night talks, and for being so patient with every version of me you've met so far.
-
-Here's to many more months, memories, and moments — together.
-
-Happy first monthsary. I love you.`
-};
-
-// Fixed engine to accept raw GitHub links natively
-function resolveDriveUrl(value, isAudio = false){
-  if(!value) return "";
-  // If it's already a raw GitHub link or external asset, bypass Google Drive processing
-  if(value.includes("raw.githubusercontent.com") || value.includes("http")) {
-    return value.trim();
-  }
-  const match = value.match(/\/d\/([a-zA-Z0-9_-]+)/) || value.match(/id=([a-zA-Z0-9_-]+)/);
-  const fileId = match ? match[1] : value.trim();
-  if(!fileId) return "";
-  
-  if(isAudio) {
-    return `https://docs.google.com/uc?export=download&id=${fileId}`;
-  }
-  if(value.includes("drive.google.com/thumbnail")) return value;
-  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
-}
-function applyConfig(){
-  // Directly maps media if available
-  const heroPhoto = document.getElementById("hero-photo");
-  if(heroPhoto && CONFIG.coverPhoto) {
-    heroPhoto.src = CONFIG.coverPhoto;
-    heroPhoto.onload = () => {
-      const ph = heroPhoto.parentElement.querySelector(".placeholder-text");
-      if(ph) ph.style.display = "none";
-    };
-  }
-
-  document.querySelectorAll("#gallery-track img[data-src]").forEach((img)=>{
-    const key = img.getAttribute("data-src");
-    if(CONFIG[key]) img.src = CONFIG[key];
-  });
-
-  const finalImg = document.getElementById('final-photo');
-  if(finalImg && CONFIG.finalPhoto) finalImg.src = CONFIG.finalPhoto;
-
+  // --- DOM SELECTORS ---
+  const loadingScreen = document.getElementById("loading-screen");
+  const beginBtn = document.getElementById("begin-btn");
+  const darkToggle = document.getElementById("dark-toggle");
+  const scrollProgress = document.getElementById("scroll-progress");
+  const sections = document.querySelectorAll("main > section");
+  const indicatorDots = document.querySelectorAll("#section-indicator .dot");
   const bgMusic = document.getElementById("bg-music");
-  if(bgMusic && CONFIG.backgroundMusic) bgMusic.src = CONFIG.backgroundMusic;
+  const musicToggle = document.getElementById("music-toggle");
+  
+  // Carousel Selectors
+  const galleryTrack = document.getElementById("gallery-track");
+  const galleryPrev = document.getElementById("gallery-prev");
+  const galleryNext = document.getElementById("gallery-next");
+  const galleryDotsContainer = document.getElementById("gallery-dots");
+  
+  // Award Selectors
+  const awardCards = document.querySelectorAll(".award-card");
+  const awardNavContainer = document.getElementById("award-nav");
+  
+  // Voice Selectors
+  const voicePlayBtn = document.getElementById("voice-play-btn");
+  const voiceWaveform = document.getElementById("voice-waveform");
+  
+  // Letter Selectors
+  const letterTextEl = document.getElementById("letter-text");
+  const letterGhostEl = document.getElementById("letter-ghost-el");
 
-  const voiceAudio = document.getElementById("voice-audio");
-  if(voiceAudio && CONFIG.voiceMessage) voiceAudio.src = CONFIG.voiceMessage;
+  let isMusicPlaying = false;
+  let letterAnimationTriggered = false;
 
-  const letterEl = document.getElementById("letter-text");
-  const ghostEl = document.getElementById("letter-ghost-el");
-  if(letterEl){
-    let txt = CONFIG.monthsaryLetter;
-    letterEl.setAttribute("data-full-text", txt);
-    if(ghostEl) ghostEl.textContent = txt;
-    letterEl.textContent = "";
+  // --- 1. INITIALIZE SETUPS & LOADING ---
+  if (CONFIG.audioUrl) {
+    bgMusic.src = CONFIG.audioUrl;
   }
-}
 
-window.addEventListener("load", ()=>{
-  setTimeout(()=>{
-    document.getElementById("loading-screen").classList.add("hidden");
-  }, 600);
-});
+  // Pre-fill hidden/ghost element for layout budgeting
+  letterGhostEl.textContent = CONFIG.letterText;
 
-function createFloatingHearts(){
-  const container = document.getElementById("hearts-bg");
-  if(!container) return;
-  const symbols = ["❤","💕","💗","♡"];
-  const count = window.innerWidth < 700 ? 8 : 15;
-  for(let i=0;i<count;i++){
-    const span = document.createElement("span");
-    span.className = "floating-heart";
-    span.textContent = symbols[Math.floor(Math.random()*symbols.length)];
-    const size = 12 + Math.random()*20;
-    span.style.fontSize = size + "px";
-    span.style.left = Math.random()*100 + "%";
-    const duration = 16 + Math.random()*16;
-    span.style.animationDuration = duration + "s";
-    span.style.animationDelay = (-Math.random()*duration) + "s";
-    container.appendChild(span);
-  }
-}
-createFloatingHearts();
-
-document.getElementById("begin-btn").addEventListener("click", ()=>{
-  document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
-});
-
-const darkToggle = document.getElementById("dark-toggle");
-function setTheme(theme){
-  document.documentElement.setAttribute("data-theme", theme);
-  darkToggle.textContent = theme === "dark" ? "☀️" : "🌙";
-  try{ localStorage.setItem("monthsary-theme", theme); }catch(e){}
-}
-darkToggle.addEventListener("click", ()=>{
-  const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  setTheme(current === "dark" ? "light" : "dark");
-});
-try{
-  const saved = localStorage.getItem("monthsary-theme");
-  if(saved) setTheme(saved);
-}catch(e){}
-
-const musicToggle = document.getElementById("music-toggle");
-const bgMusic = document.getElementById("bg-music");
-let musicPlaying = false;
-musicToggle.addEventListener("click", ()=>{
-  if(!bgMusic.src){
-    musicToggle.style.opacity = "0.5";
-    return;
-  }
-  if(musicPlaying){
-    bgMusic.pause();
-    musicToggle.textContent = "🎵";
-  } else {
-    bgMusic.play().catch(()=>{});
-    musicToggle.textContent = "🔇";
-  }
-  musicPlaying = !musicPlaying;
-});
-
-/* PROGRESS BAR & SYNC INDICATORS */
-const progressBar = document.getElementById("scroll-progress");
-const sections = Array.from(document.querySelectorAll("main > section"));
-const dots = Array.from(document.querySelectorAll("#section-indicator .dot"));
-
-function updateScrollIndicators(){
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + "%";
-
-  const mid = window.scrollY + window.innerHeight/2;
-  let activeIndex = 0;
-  sections.forEach((sec, i)=>{
-    if(sec.offsetTop <= mid) activeIndex = i;
+  // Hide loading screen safely
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loadingScreen.classList.add("hidden");
+    }, 600);
   });
-  dots.forEach((d,i)=> d.classList.toggle("active", i === activeIndex));
-}
 
-window.addEventListener("scroll", updateScrollIndicators, {passive:true});
+  // Fallback if window load delays excessively
+  setTimeout(() => {
+    loadingScreen.classList.add("hidden");
+  }, 2500);
 
-dots.forEach((dot)=>{
-  dot.addEventListener("click", ()=>{
-    const target = document.getElementById(dot.dataset.target);
-    if(target) target.scrollIntoView({behavior:"smooth"});
-  });
-});
-
-/* INTERSECTION OBSERVATION LAYER */
-const revealObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-    }
-  });
-}, {threshold:0.12});
-document.querySelectorAll(".reveal").forEach(el=> revealObserver.observe(el));
-
-const timelineObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-    }
-  });
-}, {threshold:0.2});
-document.querySelectorAll(".timeline-item").forEach(el=> timelineObserver.observe(el));
-
-/* SECTION 2 — NATIVE SMART CAROUSEL SYNC ENGINE */
-const track = document.getElementById("gallery-track");
-const cards = Array.from(document.querySelectorAll(".photo-card"));
-const dotsWrap = document.getElementById("gallery-dots");
-let currentSlide = 0;
-
-cards.forEach((_, i)=>{
-  const dot = document.createElement("span");
-  if(i===0) dot.classList.add("active");
-  dot.addEventListener("click", ()=>{
-    track.scrollTo({ left: cards[i].offsetLeft, behavior: "smooth" });
-  });
-  dotsWrap.appendChild(dot);
-});
-const galleryDots = Array.from(dotsWrap.children);
-
-track.addEventListener("scroll", ()=>{
-  const index = Math.round(track.scrollLeft / track.clientWidth);
-  currentSlide = index;
-  galleryDots.forEach((d,i)=> d.classList.toggle("active", i===index));
-}, {passive: true});
-
-document.getElementById("gallery-prev").addEventListener("click", ()=>{
-  track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-});
-document.getElementById("gallery-next").addEventListener("click", ()=>{
-  track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
-});
-
-/* SECTION 4 — TYPEWRITER DEBOUNCED ENGINE */
-const letterSection = document.getElementById("letter");
-const letterTextEl = document.getElementById("letter-text");
-let letterTyped = false;
-
-const letterObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting && !letterTyped){
-      letterTyped = true;
-      typewriterEffect(letterTextEl, letterTextEl.getAttribute("data-full-text"));
-    }
-  });
-}, {threshold:0.2});
-letterObserver.observe(letterSection);
-
-function typewriterEffect(el, text){
-  let i = 0;
-  el.textContent = "";
-  const speed = 25; 
-  function type(){
-    if(i < text.length){
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
+  // --- 2. THEME TOGGLE (DARK / LIGHT) ---
+  darkToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "dark") {
+      document.documentElement.removeAttribute("data-theme");
+      darkToggle.textContent = "🌙";
     } else {
-      el.classList.add("done");
-    }
-  }
-  type();
-}
-
-/* SECTION 5 — AWARDS DECK ENGINE */
-const awardCards = Array.from(document.querySelectorAll(".award-card"));
-const awardNav = document.getElementById("award-nav");
-let currentAward = 0;
-
-awardCards.forEach((_, i)=>{
-  const dot = document.createElement("button");
-  dot.className = "award-dot" + (i===0 ? " active" : "");
-  dot.setAttribute("aria-label", "Show award " + (i+1));
-  dot.addEventListener("click", ()=> showAward(i));
-  awardNav.appendChild(dot);
-});
-const awardDots = Array.from(awardNav.children);
-
-function showAward(index){
-  currentAward = (index + awardCards.length) % awardCards.length;
-  awardCards.forEach((c,i)=> c.classList.toggle("active", i===currentAward));
-  awardDots.forEach((d,i)=> d.classList.toggle("active", i===currentAward));
-}
-let awardInterval = setInterval(()=> showAward(currentAward+1), 4000);
-
-/* SECTION 6 — EVENT AUDIO CONTROLLER */
-const voicePlay = document.getElementById("voice-play");
-const voiceAudio = document.getElementById("voice-audio");
-const waveform = document.getElementById("waveform");
-
-voicePlay.addEventListener("click", ()=>{
-  if(!voiceAudio.src || voiceAudio.src === window.location.href){
-    voicePlay.textContent = "💌";
-    return;
-  }
-  if(voiceAudio.paused){
-    voiceAudio.play().catch(()=>{});
-  } else {
-    voiceAudio.pause();
-  }
-});
-voiceAudio.addEventListener("play", ()=>{
-  voicePlay.textContent = "❚❚";
-  waveform.classList.add("playing");
-});
-voiceAudio.addEventListener("pause", ()=>{
-  voicePlay.textContent = "▶";
-  waveform.classList.remove("playing");
-});
-voiceAudio.addEventListener("ended", ()=>{
-  voicePlay.textContent = "▶";
-  waveform.classList.remove("playing");
-});
-
-/* SECTION 7 — GRID COUPONS TOGGLE */
-document.querySelectorAll(".coupon").forEach((coupon)=>{
-  coupon.addEventListener("click", ()=>{
-    coupon.classList.toggle("redeemed");
-  });
-});
-
-/* SECTION 8 — CONFETTI */
-let confettiFired = false;
-const finalSection = document.getElementById("final");
-
-const finalObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting && !confettiFired){
-      confettiFired = true;
-      launchConfetti();
+      document.documentElement.setAttribute("data-theme", "dark");
+      darkToggle.textContent = "☀️";
     }
   });
-}, {threshold:0.4});
-finalObserver.observe(finalSection);
 
-function launchConfetti(){
-  const colors = ["#F8D7DA","#D89CA4","#E9DFFB","#FFF8F2","#8A5D6B"];
-  const total = window.innerWidth < 700 ? 35 : 65;
-  for(let i=0;i<total;i++){
-    const piece = document.createElement("div");
-    piece.className = "confetti-piece";
-    const size = 6 + Math.random()*8;
-    piece.style.width = size + "px";
-    piece.style.height = (size*0.4) + "px";
-    piece.style.left = Math.random()*100 + "vw";
-    piece.style.background = colors[Math.floor(Math.random()*colors.length)];
-    piece.style.animationDuration = (2.2 + Math.random()*2) + "s";
-    piece.style.animationDelay = (Math.random()*0.4) + "s";
-    document.body.appendChild(piece);
-    setTimeout(()=> piece.remove(), 5000);
+  // --- 3. SCROLL REVEAL, PROGRESS, & DOTS ---
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        
+        // Custom Hook: Trigger typing effect exactly when letter card steps into view
+        if (entry.target.id === "letter" && !letterAnimationTriggered) {
+          triggerLetterTyping();
+        }
+        // Custom Hook: Drop confetti when reaching the final card
+        if (entry.target.id === "final") {
+          triggerConfettiBurst();
+        }
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(sec => {
+    const wrapper = sec.querySelector(".reveal");
+    if (wrapper) {
+      wrapper.id = sec.id; 
+      revealObserver.observe(wrapper);
+    } else {
+      revealObserver.observe(sec);
+    }
+  });
+
+  // Smooth scroll helper for indicators
+  indicatorDots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const targetId = dot.getAttribute("data-target");
+      document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    // Top linear reading line math
+    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalScroll > 0) {
+      const progressPercent = (window.scrollY / totalScroll) * 100;
+      scrollProgress.style.width = `${progressPercent}%`;
+    }
+
+    // Active navigational side-dot calculations
+    let activeSectionId = "hero";
+    sections.forEach(sec => {
+      const top = sec.offsetTop - window.innerHeight / 3;
+      if (window.scrollY >= top) {
+        activeSectionId = sec.id;
+      }
+    });
+
+    indicatorDots.forEach(dot => {
+      if (dot.getAttribute("data-target") === activeSectionId) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  });
+
+  // Begin Button
+  beginBtn.addEventListener("click", () => {
+    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+    handleAudioPlay(true);
+  });
+
+  // --- 4. FLOATING BACKGROUND HEARTS ---
+  const heartsBg = document.getElementById("hearts-bg");
+  function createFloatingHeart() {
+    if (document.hidden) return; // Save resource cycles if tab blurred
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = ["❤️", "💖", "💝", "🌸", "💕"][Math.floor(Math.random() * 5)];
+    
+    heart.style.left = `${Math.random() * 100}vw`;
+    const fluidSize = Math.random() * 1.2 + 0.6;
+    heart.style.fontSize = `${fluidSize}rem`;
+    
+    const duration = Math.random() * 6 + 6;
+    heart.style.animationDuration = `${duration}s`;
+    
+    heartsBg.appendChild(heart);
+    setTimeout(() => heart.remove(), duration * 1000);
   }
-}
+  setInterval(createFloatingHeart, 750);
 
-// Init run
-applyConfig();
-updateScrollIndicators();
+  // --- 5. AUDIO HARMONY MANAGER ---
+  function handleAudioPlay(forcePlay = false) {
+    if (!CONFIG.audioUrl) return;
+    if (forcePlay || bgMusic.paused) {
+      bgMusic.play().then(() => {
+        isMusicPlaying = true;
+        musicToggle.textContent = "🔊";
+      }).catch(() => {
+        // Safe protection against restrictive native browser safety loops
+      });
+    } else {
+      bgMusic.pause();
+      isMusicPlaying = false;
+      musicToggle.textContent = "🎵";
+    }
+  }
+
+  musicToggle.addEventListener("click", () => handleAudioPlay());
+
+  // --- 6. FLUID SWIPE CAROUSEL (MEMORY LANE) ---
+  const totalSlides = galleryTrack.children.length;
+  let currentSlide = 0;
+
+  // Render navigation pagination indicators
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.className = "active";
+    dot.addEventListener("click", () => slideTo(i));
+    galleryDotsContainer.appendChild(dot);
+  }
+
+  const carouselDots = galleryDotsContainer.querySelectorAll("span");
+
+  function updateCarouselIndicators() {
+    carouselDots.forEach((d, idx) => {
+      if (idx === currentSlide) d.classList.add("active");
+      else d.classList.remove("active");
+    });
+  }
+
+  function slideTo(index) {
+    if (index < 0 || index >= totalSlides) return;
+    currentSlide = index;
+    const cardWidth = galleryTrack.querySelector(".photo-card").offsetWidth;
+    galleryTrack.scrollTo({
+      left: cardWidth * currentSlide,
+      behavior: "smooth"
+    });
+    updateCarouselIndicators();
+  }
+
+  galleryNext.addEventListener("click", () => {
+    if (currentSlide < totalSlides - 1) slideTo(currentSlide + 1);
+    else slideTo(0); // Infinite loop carousel option
+  });
+
+  galleryPrev.addEventListener("click", () => {
+    if (currentSlide > 0) slideTo(currentSlide - 1);
+    else slideTo(totalSlides - 1);
+  });
+
+  // Track user hardware layout modifications or shifts
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => slideTo(currentSlide), 150);
+  });
+
+  // Keep pagination synchronized during touch swipe gestures
+  galleryTrack.addEventListener("scroll", () => {
+    const cardWidth = galleryTrack.querySelector(".photo-card").offsetWidth;
+    if (cardWidth > 0) {
+      const indexCalculated = Math.round(galleryTrack.scrollLeft / cardWidth);
+      if (indexCalculated !== currentSlide && indexCalculated >= 0 && indexCalculated < totalSlides) {
+        currentSlide = indexCalculated;
+        updateCarouselIndicators();
+      }
+    }
+  });
+
+  // --- 7. STACKED CARDS ROTATOR (AWARDS) ---
+  let currentAwardIdx = 0;
+  
+  awardCards.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = `award-dot ${i === 0 ? 'active' : ''}`;
+    dot.setAttribute("aria-label", `Go to award slide ${i + 1}`);
+    dot.addEventListener("click", () => showAward(i));
+    awardNavContainer.appendChild(dot);
+  });
+
+  const awardDots = awardNavContainer.querySelectorAll(".award-dot");
+
+  function showAward(index) {
+    awardCards[currentAwardIdx].classList.remove("active");
+    awardDots[currentAwardIdx].classList.remove("active");
+    
+    currentAwardIdx = index;
+    
+    awardCards[currentAwardIdx].classList.add("active");
+    awardDots[currentAwardIdx].classList.add("active");
+  }
+
+  // Automate award card transitions quietly over time
+  setInterval(() => {
+    let nextIndex = currentAwardIdx + 1;
+    if (nextIndex >= awardCards.length) nextIndex = 0;
+    showAward(nextIndex);
+  }, 5000);
+
+  // --- 8. LETTER TYPING ENGINE (ZERO LAYOUT SHIFT) ---
+  function triggerLetterTyping() {
+    letterAnimationTriggered = true;
+    let index = 0;
+    const fullText = CONFIG.letterText;
+    letterTextEl.textContent = "";
+
+    function type() {
+      if (index < fullText.length) {
+        letterTextEl.textContent += fullText.charAt(index);
+        index++;
+        setTimeout(type, CONFIG.typingSpeed);
+      } else {
+        letterTextEl.classList.add("done");
+      }
+    }
+    setTimeout(type, 400);
+  }
+
+  // --- 9. MICRO VOICE RECORDING PLAYER INTERACTION ---
+  voicePlayBtn.addEventListener("click", () => {
+    if (voiceWaveform.classList.contains("playing")) {
+      voiceWaveform.classList.remove("playing");
+      voicePlayBtn.textContent = "▶";
+    } else {
+      voiceWaveform.classList.add("playing");
+      voicePlayBtn.textContent = "⏸";
+      
+      // Simulate real-time audio playback track duration limit
+      setTimeout(() => {
+        voiceWaveform.classList.remove("playing");
+        voicePlayBtn.textContent = "▶";
+      }, 8000);
+    }
+  });
+
+  // --- 10. COUPONS REDEMPTION ---
+  const coupons = document.querySelectorAll(".coupon");
+  coupons.forEach(coupon => {
+    coupon.addEventListener("click", () => {
+      coupon.classList.toggle("redeemed");
+    });
+  });
+
+  // --- 11. CONFETTI CELEBRATION EXPLOSION ---
+  function triggerConfettiBurst() {
+    const finalSection = document.getElementById("final");
+    if (finalSection.dataset.confettiDropped === "true") return;
+    finalSection.dataset.confettiDropped = "true";
+
+    const colors = ["#F8D7DA", "#D89CA4", "#E9DFFB", "#8A5D6B", "#FFF8F2"];
+    for (let i = 0; i < 65; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti-piece";
+      
+      // Distributed physics positioning
+      confetti.style.left = `${Math.random() * 100}vw`;
+      confetti.style.width = `${Math.random() * 6 + 6}px`;
+      confetti.style.height = `${Math.random() * 12 + 6}px`;
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      const fallDuration = Math.random() * 2.5 + 2.5;
+      confetti.style.animationDuration = `${fallDuration}s`;
+      confetti.style.animationDelay = `${Math.random() * 0.4}s`;
+      
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), (fallDuration + 0.4) * 1000);
+    }
+  }
+});
 </script>
 </body>
 </html>
