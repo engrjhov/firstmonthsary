@@ -445,7 +445,6 @@ section {
   50% { transform: translateY(8px); }
 }
 
-
 /* ============================================================
    2. MEMORY LANE — Fluid Responsive Carousel with Safety Margins
    ============================================================ */
@@ -749,161 +748,220 @@ section {
 }
 
 /* ============================================================
-   5. AWARDS SECTION
+   5. AWARDS SECTION — Centering & Fluid Layout Fixes
    ============================================================ */
 #awards {
-  width: 100%;
+  width: 100%; 
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #award-stage {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .award-card {
   position: absolute;
-  inset: 0;
-  padding: var(--space-md);
+  width: 100%;
+  max-width: 340px;
+  padding: 32px 24px;
+  border-radius: var(--radius);
+  left: 50%;
+  top: 50%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translate(-50%, -45%) scale(0.92);
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   pointer-events: none;
+  box-sizing: border-box; 
 }
+
 .award-card.active {
   opacity: 1;
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
 }
 
 .award-trophy {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-xs);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  display: inline-block; 
 }
+
 .award-title {
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--mauve);
-  font-weight: 700;
+  font-weight: 600;
 }
+
 .award-desc {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  line-height: 1.6;
   opacity: 0.85;
-  max-width: 320px;
 }
 
 .award-nav {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
-  margin-top: var(--space-md);
+  margin-top: 26px;
+  width: 100%;
 }
+
 .award-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: rgba(138, 93, 107, 0.25);
-  transition: var(--transition);
+  background: rgba(138,93,107,0.25);
+  transition: all .3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 .award-dot.active {
   background: var(--mauve);
-  width: 22px;
-  border-radius: 4px;
+  width: 26px;
+  border-radius: 6px;
 }
 
 /* ============================================================
-   6. VOICE MESSAGE SECTION — Multi-class Selector Fix Patch
+   6. VOICE MESSAGE SECTION — Centering & Waveform Fixes
    ============================================================ */
 #voice {
-  width: 100%;
+  width: 100%; 
   max-width: 420px;
   margin: 0 auto;
+  padding: 20px; /* Prevents edge-bleeding on small screens */
+  box-sizing: border-box;
 }
 
+/* FIX: Changed space to a single class or proper compound if glass-card is a component */
 .voice-card.glass-card {
   width: 100%;
-  padding: var(--space-lg) var(--space-md);
-  position: relative;
-}
-.voice-card.glass-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+  padding: 40px 30px; /* Balanced, uniform padding */
   border-radius: var(--radius);
-  box-shadow: 0 0 32px rgba(216, 156, 164, 0.2);
-  z-index: -1;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures all contents are perfectly centered */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1); /* Fallback glass effect if not inherited */
+  backdrop-filter: blur(10px);
 }
 
+/* Glow Effect Behind Card */
+.voice-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at center, rgba(216,156,164,0.45), transparent 70%);
+  filter: blur(18px);
+  z-index: -1;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Play/Pause Button */
 .play-btn {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   background: linear-gradient(135deg, var(--rose-gold), var(--mauve));
   color: #fff;
-  font-size: 1.4rem;
-  box-shadow: 0 8px 20px rgba(216, 156, 164, 0.3);
-  transition: var(--transition);
+  font-size: 1.6rem;
+  box-shadow: 0 10px 30px rgba(216,156,164,0.3);
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--space-md);
+  line-height: 1;
+  padding: 0;
+  margin-bottom: 28px; /* Clean spacing before waveform */
 }
+
 .play-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow: 0 12px 35px rgba(216,156,164,0.45);
 }
+
 .play-btn:active {
   transform: scale(0.95);
 }
 
+/* Waveform Container */
 .waveform {
   display: flex;
-  gap: 4px;
-  height: 40px;
-  margin-bottom: var(--space-md);
+  gap: 6px; /* Slightly wider gap for better visual breathing room */
+  height: 50px;
+  margin-bottom: 24px; /* Distinct separation between waveform and quote */
+  width: 100%;
   align-items: flex-end;
   justify-content: center;
 }
+
+/* Individual Waveform Bars */
 .waveform span {
   display: block;
   width: 4px;
-  border-radius: 2px;
+  border-radius: 3px;
   background: var(--rose-gold);
-  height: 8px;
-  transition: height 0.15s ease;
-  will-change: height;
+  height: 10px;
+  transition: height 0.15s ease, background-color 0.3s ease;
+  will-change: height; 
 }
+
+/* FIX: Added keyframe reference name 'wave' explicitly so the animation triggers */
 .waveform.playing span {
   animation: wave 1.2s ease-in-out infinite;
 }
-.waveform span:nth-child(2n) { animation-delay: -0.4s; }
-.waveform span:nth-child(3n) { animation-delay: -0.8s; }
-.waveform span:nth-child(4n) { animation-delay: -0.2s; }
+
+/* Staggered Animation Delays */
+.waveform span:nth-child(1)  { animation-delay: -1.1s; }
+.waveform span:nth-child(2)  { animation-delay: -1.0s; }
+.waveform span:nth-child(3)  { animation-delay: -0.9s; }
+.waveform span:nth-child(4)  { animation-delay: -0.8s; }
+.waveform span:nth-child(5)  { animation-delay: -0.7s; }
+.waveform span:nth-child(6)  { animation-delay: -0.6s; }
+.waveform span:nth-child(7)  { animation-delay: -0.5s; }
+.waveform span:nth-child(8)  { animation-delay: -0.4s; }
+.waveform span:nth-child(9)  { animation-delay: -0.3s; }
+.waveform span:nth-child(10) { animation-delay: -0.2s; }
+.waveform span:nth-child(11) { animation-delay: -0.1s; }
+.waveform span:nth-child(12) { animation-delay: 0s; }
 
 @keyframes wave {
-  0%, 100% { height: 8px; }
-  50% { height: 36px; }
+  0%, 100% { height: 10px; }
+  50% { height: 48px; } /* Increased slightly to maximize the 50px container */
 }
 
+/* Voice Quote Typography */
 .voice-quote {
   font-style: italic;
   color: var(--mauve);
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.5; /* Prevents text crowding if it wraps to 2 lines */
+  margin: 0;
+  max-width: 90%; /* Keeps text tracking looking elegant */
 }
-
 /* ============================================================
     7. COUPONS SECTION — Locked to Single Column Layout
     ============================================================ */
@@ -1011,8 +1069,9 @@ section {
 .coupon.redeemed .coupon-body {
   opacity: 0.45;
 }
+
 /* ============================================================
-   8. FINAL VIEWPORT HERO
+   8. FINAL SECTION — Full Viewport Centering
    ============================================================ */
 #final {
   padding: 0;
@@ -1023,13 +1082,19 @@ section {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
 }
+
 #final .final-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(58, 46, 57, 0.45), rgba(58, 46, 57, 0.85));
+  background: linear-gradient(180deg, rgba(58,46,57,0.4), rgba(58,46,57,0.85)), 
+              linear-gradient(135deg, var(--mauve), var(--rose-gold));
+  background-size: cover;
+  background-position: center;
   z-index: 1;
 }
+
 #final .final-bg img {
   position: absolute;
   inset: 0;
@@ -1042,60 +1107,71 @@ section {
 .final-content {
   position: relative;
   z-index: 2;
-  padding: var(--space-md);
-  max-width: 440px;
+  padding: 26px;
+  max-width: 480px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  box-sizing: border-box;
 }
+
 #final h2 {
-  font-size: clamp(2rem, 6vw, 2.8rem);
-  margin-bottom: var(--space-sm);
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  margin-bottom: 22px;
   font-weight: 700;
 }
+
 #final p {
   font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: var(--space-xs);
+  line-height: 1.9;
+  margin-bottom: 16px;
   font-weight: 300;
   opacity: 0.95;
 }
+
 #final .signature {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.3rem;
-  margin-top: var(--space-md);
-  color: var(--blush);
+  margin-top: 30px;
 }
 
 .final-heart {
-  font-size: 2.5rem;
-  margin-top: var(--space-sm);
+  font-size: 2.8rem;
+  margin-top: 30px;
   display: inline-block;
   animation: heartbeat 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 18px rgba(255, 255, 255, 0.5));
 }
 
 .confetti-piece {
   position: fixed;
   top: -10px;
   z-index: 2000;
-  border-radius: 1px;
+  border-radius: 2px;
   pointer-events: none;
   animation: confetti-fall linear forwards;
   will-change: transform;
 }
+
 @keyframes confetti-fall {
   to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
 }
 
 .made-with-love {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: var(--space-md) var(--space-sm) var(--space-lg);
-  font-size: 0.8rem;
+  padding: 26px 20px 50px;
+  font-size: 0.78rem;
   color: var(--mauve);
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  letter-spacing: 0.05em;
+  width: 100%;
+  display: block;
 }
-
 /* ============================================================
    RESPONSIVE DESIGN BREAKPOINTS (M-Tablet / Desktop)
    ============================================================ */
