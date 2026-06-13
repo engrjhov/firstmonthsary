@@ -1274,15 +1274,14 @@ section{
 
 <script>
 const CONFIG = {
-  // PASTE YOUR RAW GITHUB URLS INSIDE THE QUOTES BELOW:
-  coverPhoto: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/cover.jpg",          
-  photo1: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/photo1.jpg",               
-  photo2: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/photo2.jpg",               
-  photo3: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/photo3.jpg",               
-  photo4: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/photo4.jpg",               
-  finalPhoto: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/final.jpg",            
-  voiceMessage: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/path/to/voice.mp3",
-  backgroundMusic: "https://github.com/engrjhov/firstmonthsary/raw/refs/heads/main/music.mp3",          
+  coverPhoto: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/cover.jpg",          
+  photo1: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo1.jpg",               
+  photo2: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo2.jpg",               
+  photo3: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo3.jpg",               
+  photo4: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/photo4.jpg",               
+  finalPhoto: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/final.jpg",            
+  voiceMessage: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/voice.mp3",
+  backgroundMusic: "https://raw.githubusercontent.com/engrjhov/firstmonthsary/main/music.mp3",          
   monthsaryLetter:
 `My Paulo,
 
@@ -1295,6 +1294,23 @@ Here's to many more months, memories, and moments — together.
 Happy first monthsary. I love you.`
 };
 
+// Fixed engine to accept raw GitHub links natively
+function resolveDriveUrl(value, isAudio = false){
+  if(!value) return "";
+  // If it's already a raw GitHub link or external asset, bypass Google Drive processing
+  if(value.includes("raw.githubusercontent.com") || value.includes("http")) {
+    return value.trim();
+  }
+  const match = value.match(/\/d\/([a-zA-Z0-9_-]+)/) || value.match(/id=([a-zA-Z0-9_-]+)/);
+  const fileId = match ? match[1] : value.trim();
+  if(!fileId) return "";
+  
+  if(isAudio) {
+    return `https://docs.google.com/uc?export=download&id=${fileId}`;
+  }
+  if(value.includes("drive.google.com/thumbnail")) return value;
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
+}
 function applyConfig(){
   // Directly maps media if available
   const heroPhoto = document.getElementById("hero-photo");
